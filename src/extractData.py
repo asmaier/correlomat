@@ -16,7 +16,7 @@ import codecs
 from collections import defaultdict
 
 def readInput():
-	input = codecs.open("module_definition.js","r","iso-8859-1")
+	input = codecs.open("Berlin2011/module_definition.js","r","iso-8859-1")
 	return input
 
 
@@ -58,7 +58,7 @@ def generateTable(file):
 
 def writeOutput(table):
 	
-	output = codecs.open("table.csv","w","utf-8")
+	output = codecs.open("Berlin2011/table.csv","w","utf-8")
 	
 	writer = csv.writer(output)
 
@@ -92,7 +92,7 @@ def analyze(antworten):
 
 def writeOutput2(correlation):
 	
-	output = codecs.open("correlation.csv","w","utf-8")
+	output = codecs.open("Berlin2011/correlation.csv","w","utf-8")
 	writer = csv.writer(output)
 	
 	headers =["Partei"]
