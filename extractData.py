@@ -14,10 +14,17 @@ import csv
 import re
 import codecs
 from collections import defaultdict
+import zipfile
+from StringIO import StringIO
+import argparse
 
-def readInput():
-	input = codecs.open("Bayern2013/module_definition.js","r","iso-8859-1")
-	return input
+def readInput(filepath):
+	zfile = zipfile.ZipFile(filepath)
+	for name in zfile.namelist():
+		if "module_definition.js" in name:
+			file = unicode(zfile.read(name).decode("iso-8859-1"))
+	file = StringIO(file)
+	return file
 
 
 def generateTable(file):
@@ -58,7 +65,7 @@ def generateTable(file):
 
 def writeOutput(table):
 	
-	output = codecs.open("Bayern2013/table.csv","w","utf-8")
+	output = codecs.open("table.csv","w","utf-8")
 	
 	writer = csv.writer(output)
 
@@ -92,7 +99,7 @@ def analyze(antworten):
 
 def writeOutput2(correlation):
 	
-	output = codecs.open("Bayern2013/correlation.csv","w","utf-8")
+	output = codecs.open("correlation.csv","w","utf-8")
 	writer = csv.writer(output)
 	
 	headers =["Partei"]
@@ -109,7 +116,11 @@ def writeOutput2(correlation):
 		writer.writerow(row)	
 						
 if __name__ == '__main__':
-	file = readInput()
+	parser = argparse.ArgumentParser()
+	parser.add_argument("zipfile", help="path to wahl-o-mat zipfile")
+	args = parser.parse_args()
+
+	file = readInput(args.zipfile)
 	table = generateTable(file)
 	writeOutput(table)
 	correlation = analyze(table)
