@@ -1,6 +1,6 @@
 correl-o-mat
 =========
-correl-o-mat is a python script for analyzing correlations from the data of the wahl-o-mat (http://www.bpb.de/politik/wahlen/wahl-o-mat/).
+correl-o-mat is a python script for analyzing correlations from the data of the [wahl-o-mat](http://www.bpb.de/politik/wahlen/wahl-o-mat/).
 
 It generates a table with all the answers of all parties for every question in the wahl-o-mat.
 In addition, it generates a correlation matrix counting all questions where the
@@ -17,7 +17,7 @@ Usage
 -----
 
 1. Download the `wahlomat.zip` file for an election, e.g. for [Bayern 2013](http://www.bpb.de/politik/wahlen/wahl-o-mat/166512/download)
-or from the [wahl-o-mat archive](http://www.bpb.de/politik/wahlen/wahl-o-mat/45817/weitere-wahlen) .
+or from the [wahl-o-mat archive](http://www.bpb.de/politik/wahlen/wahl-o-mat/45817/weitere-wahlen).
 
 2. Run the correlomat script giving the path to `wahlomat.zip` file as the only argument
 ```
