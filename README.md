@@ -1,5 +1,16 @@
-correl-o-mat
+[DEPRECATED] correl-o-mat
 =========
+
+Deprecation notice
+------------------
+This script no longer works, because the offline version (zip file) of Wahl-O-Mat is no longer available and the https://www.bpb.de has no interest in providing the data in machine readable format. However some smart and hard-working people have found workarounds by parsing the data out from the PDFs provided by the bpb:
+
+- https://github.com/gockelhahn/qual-o-mat-data
+- https://github.com/friesenkiwi/wahl-o-meter
+- https://wahlometer.watch/
+
+Info
+----
 correl-o-mat is a python script for analyzing correlations from the data of the [wahl-o-mat](http://www.bpb.de/politik/wahlen/wahl-o-mat/).
 
 It generates a table with all the answers of all parties for every question in the wahl-o-mat.
